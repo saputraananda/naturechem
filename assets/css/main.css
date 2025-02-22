@@ -1944,6 +1944,80 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+
+
+  #priceTable .card-body {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #dataTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+  }
+
+  #dataTable th {
+    background-color:  var(--accent-color);
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+
+  #dataTable td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  #dataTable tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  #dataTable th:first-child, #dataTable td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  #dataTable th:last-child, #dataTable td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .custom-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  .btn-primary-custom {
+    background: var(--accent-color);
+    color: white;
+  }
+
+  .btn-warning-custom {
+    background: linear-gradient(135deg, #f7b733, #fc4a1a);
+    color: white;
+  }
+
+  .custom-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-warning-custom:hover {
+    background: linear-gradient(135deg, #fc4a1a, #f7b733);
+  }
+
+  .btn-primary-custom:hover {
+    background: linear-gradient(135deg, var(--accent-color),#B7EC90);
+  }
+
