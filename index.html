@@ -814,37 +814,32 @@
           </div>
 
           <div class="col-lg-12">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="400">
+            <form id="whatsappForm" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
               <div class="row gy-4">
-
+          
                 <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Nama Kamu" required="">
+                  <input type="text" id="name" class="form-control" placeholder="Nama Kamu" required>
                 </div>
-
-                <div class="col-md-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email Kamu" required="">
-                </div>
-
+          
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Tema (Subjek)" required="">
+                  <input type="email" id="email" class="form-control" placeholder="Email Kamu" required>
                 </div>
-
+          
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="3" placeholder="Isi Pesan" required=""></textarea>
+                  <input type="text" id="subject" class="form-control" placeholder="Tema (Subjek)" required>
                 </div>
-
+          
+                <div class="col-md-12">
+                  <textarea id="message" class="form-control" rows="3" placeholder="Isi Pesan" required></textarea>
+                </div>
+          
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Kirim Pesan</button>
+                  <button type="submit">Kirim ke WhatsApp</button>
                 </div>
-
+          
               </div>
             </form>
-          </div><!-- End Contact Form -->
+          </div>
 
         </div>
 
@@ -937,6 +932,23 @@
   <script>
     $(document).ready(function () {
       $('#dataTable').DataTable();
+    });
+  </script>
+
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+  
+      let phoneNumber = "6287770597000"; 
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let subject = document.getElementById("subject").value;
+      let message = document.getElementById("message").value;
+  
+      let whatsappMessage = `Halo, saya ${name}, Saya ingin bertanya terkait %0A%0A${subject},%0A%0A${message}`;
+  
+      let whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+      window.open(whatsappURL, "_blank");
     });
   </script>
 
